@@ -65,8 +65,9 @@ if 'processed_video_path' not in st.session_state:
 
 mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
-# LITE MODEL (0) FOR SPEED
-pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5, model_complexity=0)
+
+# --- CRITICAL FIX: CHANGED TO MODEL 1 TO FIX PERMISSION ERROR ---
+pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5, model_complexity=1)
 
 # --- 3. HELPER FUNCTIONS ---
 
